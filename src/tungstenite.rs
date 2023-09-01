@@ -22,8 +22,8 @@ impl BinanceWebSocketClient {
     }
 
     pub fn connect() -> Result<WebSocketState<MaybeTlsStream<TcpStream>>, Error> {
-        BinanceWebSocketClient::connect_with_url("wss://stream.binance.com:9443/stream")
-    }
+        BinanceWebSocketClient::connect_with_url("wss://fstream.binance.com/stream")
+    }wss://fstream.binance.com/stream
 }
 
 pub struct WebSocketState<T> {
