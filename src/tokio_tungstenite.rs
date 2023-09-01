@@ -30,7 +30,7 @@ impl BinanceWebSocketClient {
 
     pub async fn connect_async_default(
     ) -> Result<(WebSocketState<MaybeTlsStream<TcpStream>>, Response), Error> {
-        BinanceWebSocketClient::connect_async("wss://stream.binance.com:9443/stream").await
+        BinanceWebSocketClient::connect_async("wss://fstream.binance.com/stream").await
     }
 }
 
