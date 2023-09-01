@@ -73,7 +73,7 @@ where
         }
         let mut query_string = serializer.finish();
         let mut hyper_request = hyper::Request::builder().method(method);
-        let user_agent = &format!("binance-spot-connector-rust/{}", VERSION);
+        let user_agent = &format!("binance-futures-connector-rust/{}", VERSION);
         hyper_request = hyper_request.header("User-Agent", user_agent);
         let client_credentials = self.credentials.as_ref();
         let request_credentials = credentials.as_ref();
@@ -126,7 +126,7 @@ impl Default for BinanceHttpClient<HttpsConnector<HttpConnector>> {
     fn default() -> Self {
         Self::new(
             Client::builder().build::<_, hyper::Body>(HttpsConnector::new()),
-            "https://api.binance.com",
+            "https://fapi.binance.com",
         )
     }
 }
