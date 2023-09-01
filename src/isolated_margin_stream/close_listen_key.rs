@@ -9,7 +9,7 @@ use crate::http::{request::Request, Credentials, Method};
 /// # Example
 ///
 /// ```
-/// use binance_spot_connector_rust::isolated_margin_stream;
+/// use binance_futures_connector_rust::isolated_margin_stream;
 ///
 /// let request = isolated_margin_stream::close_listen_key("BTCUSDT", "listen-key");
 /// ```
