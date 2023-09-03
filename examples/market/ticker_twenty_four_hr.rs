@@ -1,4 +1,4 @@
-use binance_spot_connector_rust::{
+use binance_futures_connector_rust::{
     hyper::{BinanceHttpClient, Error},
     market,
 };
