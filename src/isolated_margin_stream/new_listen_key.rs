@@ -1,6 +1,6 @@
 use crate::http::{request::Request, Credentials, Method};
 
-/// `POST /sapi/v1/userDataStream/isolated`
+/// `POST /fapi/v1/listenKey`
 ///
 /// Start a new user data stream.
 /// The stream will close after 60 minutes unless a keepalive is sent. If the account has an active `listenKey`, that `listenKey` will be returned and its validity will be extended for 60 minutes.
@@ -38,7 +38,7 @@ impl From<NewListenKey> for Request {
         let params = vec![("symbol".to_owned(), request.symbol.to_string())];
 
         Request {
-            path: "/sapi/v1/userDataStream/isolated".to_owned(),
+            path: "/fapi/v1/listenKey".to_owned(),
             method: Method::Post,
             params,
             credentials: request.credentials,
@@ -66,7 +66,7 @@ mod tests {
         assert_eq!(
             request,
             Request {
-                path: "/sapi/v1/userDataStream/isolated".to_owned(),
+                path: "/fapi/v1/listenKey".to_owned(),
                 credentials: Some(credentials),
                 method: Method::Post,
                 params: vec![("symbol".to_owned(), "BTCUSDT".to_string()),],
