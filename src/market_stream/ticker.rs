@@ -11,7 +11,7 @@ use crate::websocket::Stream;
 /// # Example
 ///
 /// ```
-/// use binance_spot_connector_rust::market_stream::ticker::TickerStream;
+/// use binance_futures_connector_rust::market_stream::ticker::TickerStream;
 ///
 /// let individual_symbol_stream = TickerStream::from_symbol("BTCUSDT");
 /// let all_symbols_stream = TickerStream::all_symbols();
