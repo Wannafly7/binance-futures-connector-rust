@@ -1,6 +1,6 @@
 use crate::http::{request::Request, Credentials, Method};
 
-/// `GET /sapi/v1/margin/isolated/accountLimit`
+/// `GET path: /fapi/v2/accountLimits`
 ///
 /// Query enabled isolated margin account limit.
 ///
@@ -46,7 +46,7 @@ impl From<IsolatedMarginAccountLimit> for Request {
         }
 
         Request {
-            path: "/sapi/v1/margin/isolated/accountLimit".to_owned(),
+            path: path: "/fapi/v2/accountLimits".to_owned(),
             method: Method::Get,
             params,
             credentials: request.credentials,
@@ -81,7 +81,7 @@ mod tests {
         assert_eq!(
             request,
             Request {
-                path: "/sapi/v1/margin/isolated/accountLimit".to_owned(),
+                path: path: "/fapi/v2/accountLimits".to_owned(),
                 credentials: Some(credentials),
                 method: Method::Get,
                 params: vec![("recvWindow".to_owned(), "5000".to_string()),],
