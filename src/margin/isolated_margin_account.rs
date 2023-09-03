@@ -1,6 +1,6 @@
 use crate::http::{request::Request, Credentials, Method};
 
-/// `GET /sapi/v1/margin/isolated/account`
+/// `GET /fapi/v2/account`
 ///
 /// * If "symbols" is not sent, all isolated assets will be returned.
 /// * If "symbols" is sent, only the isolated assets of the sent symbols will be returned.
@@ -58,7 +58,7 @@ impl From<IsolatedMarginAccount> for Request {
         }
 
         Request {
-            path: "/sapi/v1/margin/isolated/account".to_owned(),
+            path: "/fapi/v2/account".to_owned(),
             method: Method::Get,
             params,
             credentials: request.credentials,
@@ -94,7 +94,7 @@ mod tests {
         assert_eq!(
             request,
             Request {
-                path: "/sapi/v1/margin/isolated/account".to_owned(),
+                path: "/fapi/v2/account".to_owned(),
                 credentials: Some(credentials),
                 method: Method::Get,
                 params: vec![
