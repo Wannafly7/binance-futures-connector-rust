@@ -1,6 +1,6 @@
 use crate::http::{request::Request, Credentials, Method};
 
-/// `PUT /sapi/v1/userDataStream/isolated`
+/// `PUT /fapi/v1/listenKey`
 ///
 /// Keepalive a user data stream to prevent a time out. User data streams will close after 60 minutes. It's recommended to send a ping about every 30 minutes.
 ///
@@ -42,7 +42,7 @@ impl From<RenewListenKey> for Request {
         ];
 
         Request {
-            path: "/sapi/v1/userDataStream/isolated".to_owned(),
+            path: "/fapi/v1/listenKey".to_owned(),
             method: Method::Put,
             params,
             credentials: request.credentials,
@@ -70,7 +70,7 @@ mod tests {
         assert_eq!(
             request,
             Request {
-                path: "/sapi/v1/userDataStream/isolated".to_owned(),
+                path: "/fapi/v1/listenKey".to_owned(),
                 credentials: Some(credentials),
                 method: Method::Put,
                 params: vec![
