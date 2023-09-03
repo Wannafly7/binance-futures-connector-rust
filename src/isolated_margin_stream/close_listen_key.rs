@@ -1,6 +1,6 @@
 use crate::http::{request::Request, Credentials, Method};
 
-/// `DELETE /sapi/v1/userDataStream/isolated`
+/// `DELETE /fapi/v1/listenKey`
 ///
 /// Close out a user data stream.
 ///
@@ -42,7 +42,7 @@ impl From<CloseListenKey> for Request {
         ];
 
         Request {
-            path: "/sapi/v1/userDataStream/isolated".to_owned(),
+            path: "/fapi/v1/listenKey".to_owned(),
             method: Method::Delete,
             params,
             credentials: request.credentials,
@@ -70,7 +70,7 @@ mod tests {
         assert_eq!(
             request,
             Request {
-                path: "/sapi/v1/userDataStream/isolated".to_owned(),
+                path: "/fapi/v1/listenKey".to_owned(),
                 credentials: Some(credentials),
                 method: Method::Delete,
                 params: vec![
